@@ -39,11 +39,11 @@ public class Program {
 
         for (int i = 0; i < QTD_VETORES; i++) {
             // Bubble
-            //executaBubbleComparacoes(i, resultadoBubble);
+            executaBubbleComparacoes(i, resultadoBubble);
             // Selection
             //executaSelectionComparacoes(i, resultadoSelection);
             // Insertion
-            //executaInsertionComparacoes(i, resultadoInsertion);
+            executaInsertionComparacoes(i, resultadoInsertion);
             // Heap
             executaHeapComparacoes(i, resultadoHeap);
             // Merge
@@ -69,9 +69,9 @@ public class Program {
         resultadoRadix.mediaComparacoes();
 
         System.out.println("Resultados: \n");
-//        System.out.println("\nBubble: \n" + resultadoBubble.toString());
+        System.out.println("\nBubble: \n" + resultadoBubble.toString());
 //        System.out.println("\nSelection: \n" + resultadoSelection.toString());
-//        System.out.println("\nInsertion: \n"+ resultadoInsertion.toString());
+        System.out.println("\nInsertion: \n" + resultadoInsertion.toString());
         System.out.println("\nHeap: \n" + resultadoHeap.toString("Heap Sort"));
 //        System.out.println("\nMerge: \n" + resultadoMerge.toString());
 //        System.out.println("\nQuick: \n" + resultadoQuick.toString());
@@ -93,12 +93,12 @@ public class Program {
     }
 
     public static void executaBubbleComparacoes(int i, MediaResultado resultado) {
-//        resultado.mediaComparacoesCinco += new BubbleSort(VETORES_CINCO[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDez += new BubbleSort(VETORES_DEZ[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCinquenta += new BubbleSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCem += new BubbleSort(VETORES_CEM[i]).qtdComparacoes;
-//        resultado.mediaComparacoesMil += new BubbleSort(VETORES_MIL[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDezMil += new BubbleSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinco += new BubbleSort(VETORES_CINCO[i]).qtdComparacoes;
+        resultado.mediaComparacoesDez += new BubbleSort(VETORES_DEZ[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinquenta += new BubbleSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+        resultado.mediaComparacoesCem += new BubbleSort(VETORES_CEM[i]).qtdComparacoes;
+        resultado.mediaComparacoesMil += new BubbleSort(VETORES_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesDezMil += new BubbleSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
     }
 
     public static void executaSelectionComparacoes(int i, MediaResultado resultado) {
@@ -111,12 +111,12 @@ public class Program {
     }
 
     public static void executaInsertionComparacoes(int i, MediaResultado resultado) {
-//        resultado.mediaComparacoesCinco += new InsertionSort(VETORES_CINCO[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDez += new InsertionSort(VETORES_DEZ[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCinquenta += new InsertionSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCem += new InsertionSort(VETORES_CEM[i]).qtdComparacoes;
-//        resultado.mediaComparacoesMil += new InsertionSort(VETORES_MIL[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDezMil += new InsertionSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinco += new InsertionSort(VETORES_CINCO[i]).qtdComparacoes;
+        resultado.mediaComparacoesDez += new InsertionSort(VETORES_DEZ[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinquenta += new InsertionSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+        resultado.mediaComparacoesCem += new InsertionSort(VETORES_CEM[i]).qtdComparacoes;
+        resultado.mediaComparacoesMil += new InsertionSort(VETORES_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesDezMil += new InsertionSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
     }
 
     public static void executaMergeComparacoes(int i, MediaResultado resultado) {

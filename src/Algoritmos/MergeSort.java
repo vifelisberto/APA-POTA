@@ -9,16 +9,15 @@ public class MergeSort {
         System.arraycopy(vetor, 0, v, 0, vetor.length);
         qtdComparacoes = 0;
         mergeSort(v, 0, v.length - 1);
-        
-        for (int z = 0; z < v.length; z++) {
-            System.out.print(v[z] + ", ");
-        }
+
+//        for (int z = 0; z < v.length; z++) {
+//            System.out.print(v[z] + ", ");
+//        }
     }
 
     private void mergeSort(int vetor[], int inicio, int fim) {
-        int meio;
         if (inicio < fim) {
-            meio = (inicio + fim) / 2;
+            int meio = (inicio + fim) / 2;
             mergeSort(vetor, inicio, meio);
             mergeSort(vetor, meio + 1, fim);
             intercala(vetor, inicio, meio, fim);
@@ -27,28 +26,30 @@ public class MergeSort {
     }
 
     private void intercala(int vetor[], int inicio, int meio, int fim) {
-        int i, j, k;
-        int vetorB[] = new int[vetor.length];
-        for (i = inicio; i < meio; i++) {
+        int[] aux = new int[vetor.length];
+
+        for (int i = inicio; i <= meio; i++) {
             qtdComparacoes++;
-            vetorB[i] = vetor[i];
+            aux[i] = vetor[i];
         }
         qtdComparacoes++;
-        for (j = meio + 1; j < fim; j++) {
+        for (int i = meio + 1; i <= fim; i++) {
             qtdComparacoes++;
-            vetorB[fim + meio + 1 - j] = vetor[j];
+            aux[meio + fim + 1 - i] = vetor[i];
         }
         qtdComparacoes++;
-        i = inicio;
-        j = fim;
-        for (k = inicio; k < fim; k++) {
+
+        int i = inicio;
+        int j = fim;
+
+        for (int k = inicio; k <= fim; k++) {
             qtdComparacoes++;
-            if (vetorB[i] <= vetorB[j]) {
-                vetor[k] = vetorB[i];
-                i = i + 1;
+            if (aux[i] <= aux[j]) {
+                vetor[k] = aux[i];
+                i++;
             } else {
-                vetor[k] = vetorB[j];
-                j = j - 1;
+                vetor[k] = aux[j];
+                j--;
             }
             qtdComparacoes++;
         }
