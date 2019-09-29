@@ -198,7 +198,7 @@ public class Program {
     private static void gerarCSV(MediaResultado... resultado) {
         String texto = "";
         for (MediaResultado resul : resultado) {
-            resul.toString();
+            texto += "\n" + resul.toString();
         }
 
         File file = new File(PATH_ARQUIVO_SAIDA);
