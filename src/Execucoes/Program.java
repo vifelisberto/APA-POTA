@@ -70,20 +70,23 @@ public class Program {
         resultadoRadix.mediaComparacoes();
 
         // Imprime resultado.
-        System.out.println("Resultados: \n");
-        System.out.println("\nBubble: \n" + resultadoBubble.toString());
-        System.out.println("\nSelection: \n" + resultadoSelection.toString());
-        System.out.println("\nInsertion: \n" + resultadoInsertion.toString());
-        System.out.println("\nHeap: \n" + resultadoHeap.toString());
-        System.out.println("\nMerge: \n" + resultadoMerge.toString());
-        System.out.println("\nQuick: \n" + resultadoQuick.toString());
-        System.out.println("\nCount: \n" + resultadoCount.toString());
-        System.out.println("\nBucket: \n" + resultadoBucket.toString());
-        System.out.println("\nRadix: \n" + resultadoRadix.toString());
+//        System.out.println("Resultados: \n");
+//        System.out.println("\nBubble: \n" + resultadoBubble.toString());
+//        System.out.println("\nSelection: \n" + resultadoSelection.toString());
+//        System.out.println("\nInsertion: \n" + resultadoInsertion.toString());
+//        System.out.println("\nHeap: \n" + resultadoHeap.toString());
+//        System.out.println("\nMerge: \n" + resultadoMerge.toString());
+//        System.out.println("\nQuick: \n" + resultadoQuick.toString());
+//        System.out.println("\nCount: \n" + resultadoCount.toString());
+//        System.out.println("\nBucket: \n" + resultadoBucket.toString());
+//        System.out.println("\nRadix: \n" + resultadoRadix.toString());
+//        
+        imprimirPorQuantidade(resultadoBubble, resultadoSelection, resultadoInsertion, resultadoHeap, resultadoMerge,
+                resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
 
         System.out.println("Gerando CSV de Saída dos dados.");
         gerarCSV(resultadoBubble, resultadoSelection, resultadoInsertion, resultadoHeap, resultadoMerge,
-                resultadoQuick, resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
+                resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
     }
 
     public static void executaHeapComparacoes(int i, MediaResultado resultado) {
@@ -220,15 +223,53 @@ public class Program {
         for (int i = 0; i < vetor.length; i++) {
             int numero = rd.nextInt(30000) + 1;
 
-            for (int j = 0; j < vetor.length; j++) {
-                if (numero == vetor[j] && j != i) {
-                    numero = rd.nextInt(30000) + 1;
-                } else {
+//            for (int j = 0; j < vetor.length; j++) {
+//                if (numero == vetor[j] && j != i) {
+//                    numero = rd.nextInt(30000) + 1;
+//                } else {
                     vetor[i] = numero;
-                }
-            }
+//                }
+//            }
         }
         return vetor;
+    }
+
+    private static void imprimirPorQuantidade(MediaResultado... resultado) {
+        String cinco, dez, cinquenta, cem, mil, dezMil;
+        cinco = dez = cinquenta = cem = mil = dezMil = "";
+
+        for (MediaResultado resul : resultado) {
+            cinco += "\n" + resul.algoritmo + ": " + resul.mediaComparacoesCinco;
+            dez += "\n" + resul.algoritmo + ": " + resul.mediaComparacoesDez;
+            cinquenta += "\n" + resul.algoritmo + ": " + resul.mediaComparacoesCinquenta;
+            cem += "\n" + resul.algoritmo + ": " + resul.mediaComparacoesCem;
+            mil += "\n" + resul.algoritmo + ": " + resul.mediaComparacoesMil;
+            dezMil += "\n" + resul.algoritmo + ": " + resul.mediaComparacoesDezMil;
+        }
+
+        System.out.println("##########################################################");
+        System.out.println("Médias Cinco: ");
+        System.out.println(cinco);
+        
+        System.out.println("##########################################################");
+        System.out.println("Médias Dez: ");
+        System.out.println(dez);
+        
+        System.out.println("##########################################################");
+        System.out.println("Médias Cinquenta: ");
+        System.out.println(cinquenta);
+        
+        System.out.println("##########################################################");
+        System.out.println("Médias Cem: ");
+        System.out.println(cem);
+        
+        System.out.println("##########################################################");
+        System.out.println("Médias Mil: ");
+        System.out.println(mil);
+        
+        System.out.println("##########################################################");
+        System.out.println("Médias Dez Mil: ");
+        System.out.println(dezMil);
     }
 
     private static void gerarCSV(MediaResultado... resultado) {

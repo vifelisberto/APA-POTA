@@ -18,9 +18,7 @@ public class BubbleSort {
         int temp;
 
         for (i = 0; i < vetor.length; i++) {
-            qtdComparacoes++;
             for (j = i + 1; j < vetor.length; j++) {
-                qtdComparacoes++;
                 qtdComparacoes++;
                 if (vetor[i] > vetor[j]) {
                     temp = vetor[j];
@@ -28,8 +26,6 @@ public class BubbleSort {
                     vetor[i] = temp;
                 }
             }
-            qtdComparacoes++;
         }
-        qtdComparacoes++;
     }
 }

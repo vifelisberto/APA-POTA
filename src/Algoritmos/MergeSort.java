@@ -16,28 +16,25 @@ public class MergeSort {
     }
 
     private void mergeSort(int vetor[], int inicio, int fim) {
+        qtdComparacoes++;
         if (inicio < fim) {
             int meio = (inicio + fim) / 2;
             mergeSort(vetor, inicio, meio);
             mergeSort(vetor, meio + 1, fim);
             intercala(vetor, inicio, meio, fim);
         }
-        qtdComparacoes++;
     }
 
     private void intercala(int vetor[], int inicio, int meio, int fim) {
         int[] aux = new int[vetor.length];
 
         for (int i = inicio; i <= meio; i++) {
-            qtdComparacoes++;
             aux[i] = vetor[i];
         }
-        qtdComparacoes++;
+
         for (int i = meio + 1; i <= fim; i++) {
-            qtdComparacoes++;
             aux[meio + fim + 1 - i] = vetor[i];
         }
-        qtdComparacoes++;
 
         int i = inicio;
         int j = fim;
@@ -48,11 +45,10 @@ public class MergeSort {
                 vetor[k] = aux[i];
                 i++;
             } else {
+                qtdComparacoes++;
                 vetor[k] = aux[j];
                 j--;
             }
-            qtdComparacoes++;
         }
-        qtdComparacoes++;
     }
 }

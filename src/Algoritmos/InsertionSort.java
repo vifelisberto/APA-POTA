@@ -18,15 +18,12 @@ public class InsertionSort {
         int key;
 
         for (i = 1; i < vetor.length; i++) {
-            qtdComparacoes++;
             key = vetor[i];
             for (j = i - 1; j >= 0 && vetor[j] > key; j--) {
                 qtdComparacoes++;
                 vetor[j + 1] = vetor[j];
             }
-            qtdComparacoes++;
             vetor[j + 1] = key;
         }
-        qtdComparacoes++;
     }
 }

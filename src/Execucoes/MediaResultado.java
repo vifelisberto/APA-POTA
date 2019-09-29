@@ -4,12 +4,12 @@ import static Execucoes.Program.QTD_VETORES;
 
 public class MediaResultado {
 
-    public int mediaComparacoesCinco = 0;
-    public int mediaComparacoesDez = 0;
-    public int mediaComparacoesCinquenta = 0;
-    public int mediaComparacoesCem = 0;
-    public int mediaComparacoesMil = 0;
-    public int mediaComparacoesDezMil = 0;
+    public float mediaComparacoesCinco = 0;
+    public float mediaComparacoesDez = 0;
+    public float mediaComparacoesCinquenta = 0;
+    public float mediaComparacoesCem = 0;
+    public float mediaComparacoesMil = 0;
+    public float mediaComparacoesDezMil = 0;
     public String algoritmo;
 
     public MediaResultado(String algoritmo){

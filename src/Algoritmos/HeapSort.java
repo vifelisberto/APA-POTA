@@ -24,10 +24,8 @@ public class HeapSort {
     private void transforma_heap(int qtde) {
         int i, pai, aux;
         for (i = qtde / 2; i >= 1; i--) {
-            qtdComparacoes++;
             heap_fica(i, qtde);
         }
-        qtdComparacoes++;
     }
 
     private void heap_fica(int i, int qtde) {
@@ -47,30 +45,29 @@ public class HeapSort {
         } else if (2 * i <= qtde) {
             qtdComparacoes++;
             f_dir = 2 * i;
+
+            qtdComparacoes++;
             if (x[f_dir] > x[i]) {
                 maior = 2 * i;
             }
-            qtdComparacoes++;
         }
+        qtdComparacoes++;
         if (maior != i) {
             aux = x[i];
             x[i] = x[maior];
             x[maior] = aux;
             heap_fica(maior, qtde);
         }
-        qtdComparacoes++;
     }
 
     private void ordena(int qtde) {
         int i, aux, ultima_posi;
         for (i = qtde; i >= 2; i--) {
-            qtdComparacoes++;
             aux = x[1];
             x[1] = x[i];
             x[i] = aux;
             ultima_posi = i - 1;
             heap_fica(1, ultima_posi);
         }
-        qtdComparacoes++;
     }
 }

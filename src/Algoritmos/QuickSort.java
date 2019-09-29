@@ -10,15 +10,12 @@ public class QuickSort {
         qtdComparacoes = 0;
 
         sort(v, 0, v.length - 1);
-
-        //printArray(v);
     }
 
     private int partition(int arr[], int low, int high) {
         int pivot = arr[high];
         int i = (low - 1);
         for (int j = low; j < high; j++) {
-            qtdComparacoes++;
             qtdComparacoes++;
             if (arr[j] < pivot) {
                 i++;
@@ -28,7 +25,6 @@ public class QuickSort {
                 arr[j] = temp;
             }
         }
-        qtdComparacoes++;
 
         int temp = arr[i + 1];
         arr[i + 1] = arr[high];
@@ -45,13 +41,5 @@ public class QuickSort {
             sort(arr, low, pi - 1);
             sort(arr, pi + 1, high);
         }
-    }
-
-    private static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
     }
 }
