@@ -41,21 +41,21 @@ public class Program {
             // Bubble
             executaBubbleComparacoes(i, resultadoBubble);
             // Selection
-            //executaSelectionComparacoes(i, resultadoSelection);
+            executaSelectionComparacoes(i, resultadoSelection);
             // Insertion
             executaInsertionComparacoes(i, resultadoInsertion);
             // Heap
             executaHeapComparacoes(i, resultadoHeap);
             // Merge
-            //executaMergeComparacoes(i, resultadoMerge);
+            executaMergeComparacoes(i, resultadoMerge);
             // Quick
-            //executaQuickComparacoes(i, resultadoQuick);
+            executaQuickComparacoes(i, resultadoQuick);
             // Count
-            //executaCountComparacoes(i, resultadoCount);
+            executaCountComparacoes(i, resultadoCount);
             // Bucket
-            //executaBucketComparacoes(i, resultadoBucket);
+            executaBucketComparacoes(i, resultadoBucket);
             // Radix
-            //executaRadixComparacoes(i, resultadoRadix);
+            executaRadixComparacoes(i, resultadoRadix);
         }
 
         // Faz a média dos resultados.
@@ -132,39 +132,39 @@ public class Program {
     }
 
     public static void executaQuickComparacoes(int i, MediaResultado resultado) {
-//        resultado.mediaComparacoesCinco += new QuickSort(VETORES_CINCO[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDez += new QuickSort(VETORES_DEZ[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCinquenta += new QuickSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCem += new QuickSort(VETORES_CEM[i]).qtdComparacoes;
-//        resultado.mediaComparacoesMil += new QuickSort(VETORES_MIL[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDezMil += new QuickSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinco += new QuickSort(VETORES_CINCO[i]).qtdComparacoes;
+        resultado.mediaComparacoesDez += new QuickSort(VETORES_DEZ[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinquenta += new QuickSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+        resultado.mediaComparacoesCem += new QuickSort(VETORES_CEM[i]).qtdComparacoes;
+        resultado.mediaComparacoesMil += new QuickSort(VETORES_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesDezMil += new QuickSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
     }
 
     public static void executaCountComparacoes(int i, MediaResultado resultado) {
-//        resultado.mediaComparacoesCinco += new CountSort(VETORES_CINCO[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDez += new CountSort(VETORES_DEZ[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCinquenta += new CountSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCem += new CountSort(VETORES_CEM[i]).qtdComparacoes;
-//        resultado.mediaComparacoesMil += new CountSort(VETORES_MIL[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDezMil += new CountSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinco += new CountSort(VETORES_CINCO[i]).qtdComparacoes;
+        resultado.mediaComparacoesDez += new CountSort(VETORES_DEZ[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinquenta += new CountSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+        resultado.mediaComparacoesCem += new CountSort(VETORES_CEM[i]).qtdComparacoes;
+        resultado.mediaComparacoesMil += new CountSort(VETORES_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesDezMil += new CountSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
     }
 
     public static void executaBucketComparacoes(int i, MediaResultado resultado) {
-//        resultado.mediaComparacoesCinco += new BucketSort(VETORES_CINCO[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDez += new BucketSort(VETORES_DEZ[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCinquenta += new BucketSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCem += new BucketSort(VETORES_CEM[i]).qtdComparacoes;
-//        resultado.mediaComparacoesMil += new BucketSort(VETORES_MIL[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDezMil += new BucketSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinco += new BucketSort(VETORES_CINCO[i]).qtdComparacoes;
+        resultado.mediaComparacoesDez += new BucketSort(VETORES_DEZ[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinquenta += new BucketSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+        resultado.mediaComparacoesCem += new BucketSort(VETORES_CEM[i]).qtdComparacoes;
+        resultado.mediaComparacoesMil += new BucketSort(VETORES_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesDezMil += new BucketSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
     }
 
     public static void executaRadixComparacoes(int i, MediaResultado resultado) {
-//        resultado.mediaComparacoesCinco += new RadixSort(VETORES_CINCO[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDez += new RadixSort(VETORES_DEZ[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCinquenta += new RadixSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-//        resultado.mediaComparacoesCem += new RadixSort(VETORES_CEM[i]).qtdComparacoes;
-//        resultado.mediaComparacoesMil += new RadixSort(VETORES_MIL[i]).qtdComparacoes;
-//        resultado.mediaComparacoesDezMil += new RadixSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinco += new RadixSort(VETORES_CINCO[i]).qtdComparacoes;
+        resultado.mediaComparacoesDez += new RadixSort(VETORES_DEZ[i]).qtdComparacoes;
+        resultado.mediaComparacoesCinquenta += new RadixSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+        resultado.mediaComparacoesCem += new RadixSort(VETORES_CEM[i]).qtdComparacoes;
+        resultado.mediaComparacoesMil += new RadixSort(VETORES_MIL[i]).qtdComparacoes;
+        resultado.mediaComparacoesDezMil += new RadixSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
     }
 
     private static int[][] gerarVetoresAleatorios(int qtdVetores, int tamanhoVetores) {
