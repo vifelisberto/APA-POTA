@@ -87,84 +87,120 @@ public class Program {
     }
 
     public static void executaHeapComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new HeapSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new HeapSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new HeapSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new HeapSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new HeapSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new HeapSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new HeapSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new HeapSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new HeapSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new HeapSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new HeapSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new HeapSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Heap: " + e.getMessage());
+        }
     }
 
     public static void executaBubbleComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new BubbleSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new BubbleSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new BubbleSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new BubbleSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new BubbleSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new BubbleSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new BubbleSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new BubbleSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new BubbleSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new BubbleSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new BubbleSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new BubbleSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Bubble: " + e.getMessage());
+        }
     }
 
     public static void executaSelectionComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new SelectionSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new SelectionSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new SelectionSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new SelectionSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new SelectionSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new SelectionSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new SelectionSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new SelectionSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new SelectionSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new SelectionSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new SelectionSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new SelectionSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Selection: " + e.getMessage());
+        }
     }
 
     public static void executaInsertionComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new InsertionSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new InsertionSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new InsertionSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new InsertionSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new InsertionSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new InsertionSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new InsertionSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new InsertionSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new InsertionSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new InsertionSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new InsertionSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new InsertionSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Insertion: " + e.getMessage());
+        }
     }
 
     public static void executaMergeComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new MergeSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new MergeSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new MergeSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new MergeSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new MergeSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new MergeSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new MergeSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new MergeSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new MergeSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new MergeSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new MergeSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new MergeSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Merge: " + e.getMessage());
+        }
     }
 
     public static void executaQuickComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new QuickSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new QuickSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new QuickSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new QuickSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new QuickSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new QuickSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new QuickSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new QuickSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new QuickSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new QuickSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new QuickSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new QuickSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Quick: " + e.getMessage());
+        }
     }
 
     public static void executaCountComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new CountSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new CountSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new CountSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new CountSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new CountSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new CountSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new CountSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new CountSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new CountSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new CountSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new CountSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new CountSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Count: " + e.getMessage());
+        }
     }
 
     public static void executaBucketComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new BucketSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new BucketSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new BucketSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new BucketSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new BucketSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new BucketSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new BucketSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new BucketSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new BucketSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new BucketSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new BucketSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new BucketSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Bucket: " + e.getMessage());
+        }
     }
 
     public static void executaRadixComparacoes(int i, MediaResultado resultado) {
-        resultado.mediaComparacoesCinco += new RadixSort(VETORES_CINCO[i]).qtdComparacoes;
-        resultado.mediaComparacoesDez += new RadixSort(VETORES_DEZ[i]).qtdComparacoes;
-        resultado.mediaComparacoesCinquenta += new RadixSort(VETORES_CINQUENTA[i]).qtdComparacoes;
-        resultado.mediaComparacoesCem += new RadixSort(VETORES_CEM[i]).qtdComparacoes;
-        resultado.mediaComparacoesMil += new RadixSort(VETORES_MIL[i]).qtdComparacoes;
-        resultado.mediaComparacoesDezMil += new RadixSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        try {
+            resultado.mediaComparacoesCinco += new RadixSort(VETORES_CINCO[i]).qtdComparacoes;
+            resultado.mediaComparacoesDez += new RadixSort(VETORES_DEZ[i]).qtdComparacoes;
+            resultado.mediaComparacoesCinquenta += new RadixSort(VETORES_CINQUENTA[i]).qtdComparacoes;
+            resultado.mediaComparacoesCem += new RadixSort(VETORES_CEM[i]).qtdComparacoes;
+            resultado.mediaComparacoesMil += new RadixSort(VETORES_MIL[i]).qtdComparacoes;
+            resultado.mediaComparacoesDezMil += new RadixSort(VETORES_DEZ_MIL[i]).qtdComparacoes;
+        } catch (Exception e) {
+            System.out.println("Erro ao executar Radix: " + e.getMessage());
+        }
     }
 
     private static int[][] gerarVetoresAleatorios(int qtdVetores, int tamanhoVetores) {
