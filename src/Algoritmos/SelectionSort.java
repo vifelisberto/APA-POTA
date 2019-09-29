@@ -18,8 +18,8 @@ public class SelectionSort {
         do {
             int newn = 0;
             for (int i = 1; i <= n - 1; i++) {
-                qtdComparacoes++;
                 if (v[i - 1] > v[i]) {
+                    qtdComparacoes++;
                     int aux = v[i];
                     v[i] = v[i - 1];
                     v[i - 1] = aux;

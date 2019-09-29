@@ -85,7 +85,10 @@ public class Program {
                 resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
 
         System.out.println("Gerando CSV de Saída dos dados.");
-        gerarCSV(resultadoBubble, resultadoSelection, resultadoInsertion, resultadoHeap, resultadoMerge,
+//        gerarCSV(resultadoBubble, resultadoSelection, resultadoInsertion, resultadoHeap, resultadoMerge,
+//                resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
+//        
+        gerarCSV2(resultadoBubble, resultadoSelection, resultadoInsertion, resultadoHeap, resultadoMerge,
                 resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
     }
 
@@ -221,13 +224,13 @@ public class Program {
         Random rd = new Random();
 
         for (int i = 0; i < vetor.length; i++) {
-            int numero = rd.nextInt(30000) + 1;
+            int numero = rd.nextInt(10000) + 1;
 
 //            for (int j = 0; j < vetor.length; j++) {
 //                if (numero == vetor[j] && j != i) {
 //                    numero = rd.nextInt(30000) + 1;
 //                } else {
-                    vetor[i] = numero;
+            vetor[i] = numero;
 //                }
 //            }
         }
@@ -250,23 +253,23 @@ public class Program {
         System.out.println("##########################################################");
         System.out.println("Médias Cinco: ");
         System.out.println(cinco);
-        
+
         System.out.println("##########################################################");
         System.out.println("Médias Dez: ");
         System.out.println(dez);
-        
+
         System.out.println("##########################################################");
         System.out.println("Médias Cinquenta: ");
         System.out.println(cinquenta);
-        
+
         System.out.println("##########################################################");
         System.out.println("Médias Cem: ");
         System.out.println(cem);
-        
+
         System.out.println("##########################################################");
         System.out.println("Médias Mil: ");
         System.out.println(mil);
-        
+
         System.out.println("##########################################################");
         System.out.println("Médias Dez Mil: ");
         System.out.println(dezMil);
@@ -285,6 +288,50 @@ public class Program {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(texto + "\n");
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Não foi possível criar o arquivo. - " + e.getMessage());
+        }
+    }
+
+    private static void gerarCSV2(MediaResultado... resultado) {
+        String cinco, dez, cinquenta, cem, mil, dezMil;
+        cinco = dez = cinquenta = cem = mil = dezMil = "";
+        
+        for (MediaResultado resul : resultado) {
+            cinco += "\n" + resul.algoritmo + "; " + resul.mediaComparacoesCinco;
+            dez += "\n" + resul.algoritmo + "; " + resul.mediaComparacoesDez;
+            cinquenta += "\n" + resul.algoritmo + "; " + resul.mediaComparacoesCinquenta;
+            cem += "\n" + resul.algoritmo + "; " + resul.mediaComparacoesCem;
+            mil += "\n" + resul.algoritmo + "; " + resul.mediaComparacoesMil;
+            dezMil += "\n" + resul.algoritmo + "; " + resul.mediaComparacoesDezMil;
+        }
+
+        File file = new File(PATH_ARQUIVO_SAIDA);
+        if (file.exists()) {
+            file.delete();
+        }
+
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write("\n5");
+            writer.write(cinco);
+
+            writer.write("\n10");
+            writer.write(dez);
+
+            writer.write("\n50");
+            writer.write(cinquenta);
+
+            writer.write("\n100");
+            writer.write(cem);
+
+            writer.write("\n1000");
+            writer.write(mil);
+
+            writer.write("\n10000");
+            writer.write(dezMil);
+            
             writer.flush();
             writer.close();
         } catch (IOException e) {

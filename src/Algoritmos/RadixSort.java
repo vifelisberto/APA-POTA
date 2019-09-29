@@ -17,8 +17,8 @@ public class RadixSort {
     private int getMax(int arr[], int n) {
         int mx = arr[0];
         for (int i = 1; i < n; i++) {
-            qtdComparacoes++;
             if (arr[i] > mx) {
+                qtdComparacoes++;
                 mx = arr[i];
             }
         }
@@ -53,6 +53,7 @@ public class RadixSort {
         int m = getMax(arr, n);
 
         for (int exp = 1; m / exp > 0; exp *= 10) {
+            qtdComparacoes++;
             countSort(arr, n, exp);
         }
     }

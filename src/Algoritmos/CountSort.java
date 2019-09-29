@@ -9,37 +9,44 @@ public class CountSort {
         int[] vetor = new int[v.length];
         System.arraycopy(v, 0, vetor, 0, v.length);
 
-        ordena(vetor, vetor.length);
+        countSort(vetor);
     }
 
-    private static void ordena(int[] vetor, int m) {
-        int n = vetor.length;
+    private void countSort(int[] arr) {
 
-        int vetoraux[] = new int[m];
+        int min = arr[0];
+        int max = arr[0];
 
-        for (int i = 0; i < m; i++) {
-            vetoraux[i] = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                qtdComparacoes++;
+                min = arr[i];
+            } else if (arr[i] > max) {
+                qtdComparacoes++;
+                max = arr[i];
+            }
         }
 
-        for (int i = 0; i < n; i++) {
-            vetoraux[vetor[i]]++;
+        int range = max - min + 1;
+        int count[] = new int[range];
+        int output[] = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i] - min]++;
         }
 
-        int sum = 0;
-        for (int i = 1; i < m; i++) {
-            int dum = vetoraux[i];
-            vetoraux[i] = sum;
-            sum += dum;
-        }
-        int vetorOrdenado[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            vetorOrdenado[vetoraux[vetor[i]]] = vetor[i];
-            vetoraux[vetor[i]]++;
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
         }
 
-        for (int i = 0; i < n; i++) {
-            vetor[i] = vetorOrdenado[i];
+        for (int i = arr.length - 1; i >= 0; i--) {
+            output[count[arr[i] - min] - 1] = arr[i];
+            count[arr[i] - min]--;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = output[i];
         }
     }
-   
+
 }

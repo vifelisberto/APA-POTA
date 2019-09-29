@@ -16,8 +16,8 @@ public class BucketSort {
         int mx = arr[0];
         for (int i = 1; i < n; i++) {
             // Verificar
-            qtdComparacoes++;
             if (arr[i] > mx) {
+                qtdComparacoes++;
                 mx = arr[i];
             }
         }
@@ -38,10 +38,10 @@ public class BucketSort {
         int outPos = 0;
         for (int i = 0; i < bucket.length; i++) {
             for (int j = 0; j < bucket[i]; j++) {
+                qtdComparacoes++;
                 a[outPos++] = i;
             }
         }
     }
-    
-    
+
 }

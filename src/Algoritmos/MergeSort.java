@@ -16,8 +16,8 @@ public class MergeSort {
     }
 
     private void mergeSort(int vetor[], int inicio, int fim) {
-        qtdComparacoes++;
         if (inicio < fim) {
+            qtdComparacoes++;
             int meio = (inicio + fim) / 2;
             mergeSort(vetor, inicio, meio);
             mergeSort(vetor, meio + 1, fim);
@@ -40,8 +40,8 @@ public class MergeSort {
         int j = fim;
 
         for (int k = inicio; k <= fim; k++) {
-            qtdComparacoes++;
             if (aux[i] <= aux[j]) {
+                qtdComparacoes++;
                 vetor[k] = aux[i];
                 i++;
             } else {

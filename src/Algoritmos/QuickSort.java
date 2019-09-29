@@ -16,8 +16,8 @@ public class QuickSort {
         int pivot = arr[high];
         int i = (low - 1);
         for (int j = low; j < high; j++) {
-            qtdComparacoes++;
             if (arr[j] < pivot) {
+                qtdComparacoes++;
                 i++;
 
                 int temp = arr[i];
@@ -34,8 +34,8 @@ public class QuickSort {
     }
 
     private void sort(int arr[], int low, int high) {
-        qtdComparacoes++;
         if (low < high) {
+            qtdComparacoes++;
             int pi = partition(arr, low, high);
 
             sort(arr, low, pi - 1);
