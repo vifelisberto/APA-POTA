@@ -27,15 +27,15 @@ public class Program {
 
     private static void executarAlgoritmos() {
         // Inicializa as váriaveis que irão guardar os resultados de cada algoritmos (as médias).
-        MediaResultado resultadoBubble = new MediaResultado();
-        MediaResultado resultadoSelection = new MediaResultado();
-        MediaResultado resultadoInsertion = new MediaResultado();
-        MediaResultado resultadoMerge = new MediaResultado();
-        MediaResultado resultadoQuick = new MediaResultado();
-        MediaResultado resultadoCount = new MediaResultado();
-        MediaResultado resultadoBucket = new MediaResultado();
-        MediaResultado resultadoRadix = new MediaResultado();
-        MediaResultado resultadoHeap = new MediaResultado();
+        MediaResultado resultadoBubble = new MediaResultado("Bubble Sort");
+        MediaResultado resultadoSelection = new MediaResultado("Selection Sort");
+        MediaResultado resultadoInsertion = new MediaResultado("Insertion Sort");
+        MediaResultado resultadoMerge = new MediaResultado("Merge Sort");
+        MediaResultado resultadoQuick = new MediaResultado("Quick Sort");
+        MediaResultado resultadoCount = new MediaResultado("Count Sort");
+        MediaResultado resultadoBucket = new MediaResultado("Bucket Sort");
+        MediaResultado resultadoRadix = new MediaResultado("Radix Sort");
+        MediaResultado resultadoHeap = new MediaResultado("Heap Sort");
 
         for (int i = 0; i < QTD_VETORES; i++) {
             // Bubble
@@ -58,6 +58,7 @@ public class Program {
             //executaRadixComparacoes(i, resultadoRadix);
         }
 
+        // Faz a média dos resultados.
         resultadoBubble.mediaComparacoes();
         resultadoSelection.mediaComparacoes();
         resultadoInsertion.mediaComparacoes();
@@ -68,19 +69,21 @@ public class Program {
         resultadoBucket.mediaComparacoes();
         resultadoRadix.mediaComparacoes();
 
+        // Imprime resultado.
         System.out.println("Resultados: \n");
         System.out.println("\nBubble: \n" + resultadoBubble.toString());
-//        System.out.println("\nSelection: \n" + resultadoSelection.toString());
+        System.out.println("\nSelection: \n" + resultadoSelection.toString());
         System.out.println("\nInsertion: \n" + resultadoInsertion.toString());
-        System.out.println("\nHeap: \n" + resultadoHeap.toString("Heap Sort"));
-//        System.out.println("\nMerge: \n" + resultadoMerge.toString());
-//        System.out.println("\nQuick: \n" + resultadoQuick.toString());
-//        System.out.println("\nCount: \n" + resultadoCount.toString());
-//        System.out.println("\nBucket: \n" + resultadoBucket.toString());
-//        System.out.println("\nRadix: \n" + resultadoRadix.toString());
+        System.out.println("\nHeap: \n" + resultadoHeap.toString());
+        System.out.println("\nMerge: \n" + resultadoMerge.toString());
+        System.out.println("\nQuick: \n" + resultadoQuick.toString());
+        System.out.println("\nCount: \n" + resultadoCount.toString());
+        System.out.println("\nBucket: \n" + resultadoBucket.toString());
+        System.out.println("\nRadix: \n" + resultadoRadix.toString());
 
         System.out.println("Gerando CSV de Saída dos dados.");
-        gerarCSV(resultadoHeap.toString("Heap Sort"));
+        gerarCSV(resultadoBubble, resultadoSelection, resultadoInsertion, resultadoHeap, resultadoMerge,
+                resultadoQuick, resultadoQuick, resultadoCount, resultadoBucket, resultadoRadix);
     }
 
     public static void executaHeapComparacoes(int i, MediaResultado resultado) {
@@ -192,7 +195,12 @@ public class Program {
         return vetor;
     }
 
-    private static void gerarCSV(String texto) {
+    private static void gerarCSV(MediaResultado... resultado) {
+        String texto = "";
+        for (MediaResultado resul : resultado) {
+            resul.toString();
+        }
+
         File file = new File(PATH_ARQUIVO_SAIDA);
         if (file.exists()) {
             file.delete();
